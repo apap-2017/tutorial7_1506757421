@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/fragment">
+    <head>
+        <title>View All Courses</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+		
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+	</head>
+	<body>
+		<div th:replace="fragments/fragment :: header"></div>
+        
+        <div layout:fragment="content">
+        	<h1>All Courses</h1>
+	        
+	        <table id="courses" class="display" cellspacing="0" width="100%">
+		        <thead>
+		            <tr>
+		                <th>No. </th>
+		                <th>ID</th>
+		                <th>Name</th>
+		                <th>Credits</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		        
+		    	<div th:each="course,iterationStatus: ${courses}"  th:class="${iterationStatus.odd}?'odd'">
+		            <tr>
+		            	<td th:text="${iterationStatus.count}"></td>
+		            	<td th:text="${course.idCourse}"></td>
+		            	<td th:text="${course.name}"></td>
+		            	<td th:text="${course.credits}"></td>
+		            </tr>
+		       	</div>
+		       	</tbody>
+	       	</table>
+	       	<script>
+				$(document).ready(function() {
+				    $('#courses').DataTable();
+				} );
+			</script>
+        </div>
+       	<div th:replace="fragments/fragment :: footer"></div>
+    </body>
+</html>
