@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/fragment">
+    <head>
+        <title>Course not found</title>
+    </head>
+    <body>
+    	<div layout:fragment="content">
+    		<h1>Course not found</h1>
+       		<h3 th:text="'ID = ' + ${id}">Course ID</h3>
+    	</div>
+    </body>
+</html>

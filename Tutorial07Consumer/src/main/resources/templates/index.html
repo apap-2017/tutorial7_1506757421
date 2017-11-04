@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/fragment">
+	<head>
+		<title>Index</title>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<div th:replace="fragments/fragment :: header"></div>
+		<div layout:fragment="content">
+			<center>
+				Welcome to Tutorial 6 APAP
+			</center>
+		</div>
+		<div th:replace="fragments/fragment :: footer"></div>
+	</body>
+</html>
+
